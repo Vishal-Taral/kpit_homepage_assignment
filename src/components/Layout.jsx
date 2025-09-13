@@ -1,36 +1,25 @@
-import FooterOne from "./FooterOne";
-import FooterTwo from "./FooterTwo";
-import Header from "./Header";
+import Header from "../components/Header";
+import FooterOne from "../components/FooterOne";
+import FooterTwo from "../components/FooterTwo";
+import HeaderOne from "./HeaderOne";
 
 export default function Layout({ children }) {
   return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <FooterOne />
-      <FooterTwo />
-    </>
+    <html lang="en">
+      <body className="relative">
+        {/* Sticky wrapper for both headers */}
+        <div className="sticky top-0 z-50 bg-white shadow-sm">
+          <HeaderOne />
+          <Header />
+        </div>
+
+        {/* Page content */}
+        <main>{children}</main>
+
+        {/* Footers */}
+        <FooterOne />
+        <FooterTwo />
+      </body>
+    </html>
   );
 }
-
-
-// import './globals.css';
-// import { Lenis as ReactLenis } from '@studio-freight/lenis';
-// import Header from '../components/Header';
-// import FooterOne from '../components/FooterOne';
-// import FooterTwo from '../components/FooterTwo';
-
-// export default function Layout({ children }) {
-//   return (
-//     <html lang="en">
-//       <body>
-//         <ReactLenis root>
-//           <Header />
-//           {children}
-//           <FooterOne />
-//           <FooterTwo />
-//         </ReactLenis>
-//       </body>
-//     </html>
-//   );
-// }
