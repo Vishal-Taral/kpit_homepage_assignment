@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'swiper/css';
-@import 'swiper/css/pagination';
-@import 'aos/dist/aos.css';
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "aos/dist/aos.css";
 
 :root {
   --background: #ffffff;
@@ -30,4 +30,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 1rem;
 }
