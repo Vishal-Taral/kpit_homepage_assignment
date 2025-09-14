@@ -10,7 +10,7 @@ const FooterTwo = () => {
       <div className={styles.container}>
         <div className={styles.columns}>
           <div className={styles.column}>
-            <img src="/logo.svg" alt="KPIT Logo" className={styles.logo} />
+            <img src="https://www.kpit.com/wp-content/themes/kpit-wp/assets/img/footer-logo.png" alt="KPIT Logo" className={styles.logo} />
             <p>
               About KPIT KPIT is reimagining the future of mobility, forging
               ahead with group companies and partners to shape a world that is

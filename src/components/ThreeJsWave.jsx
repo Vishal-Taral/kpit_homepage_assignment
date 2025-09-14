@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const ThreeJsWave = () => {
+const ThreeJsWave = ({ enableCursorMovement = false }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
     const SEPARATION = 10, AMOUNTX = 100, AMOUNTY = 35;
     let container = mountRef.current;
     let camera, scene, renderer, particles, count = 0;
+    let mouseX = 0;
 
     let width = window.innerWidth;
     let height = container.offsetHeight;
@@ -17,7 +18,7 @@ const ThreeJsWave = () => {
 
     function init() {
       camera = new THREE.PerspectiveCamera(65, width / height, 1, 10000);
-      camera.position.set(0, 150, 400); // Zukahua (top-down angle)
+      camera.position.set(0, 150, 400);
 
       scene = new THREE.Scene();
 
@@ -71,7 +72,14 @@ const ThreeJsWave = () => {
       renderer.setSize(width, height);
       container.appendChild(renderer.domElement);
 
+      if (enableCursorMovement) {
+        window.addEventListener('mousemove', onMouseMove);
+      }
       window.addEventListener('resize', onWindowResize);
+    }
+
+    function onMouseMove(event) {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
     }
 
     function onWindowResize() {
@@ -94,10 +102,21 @@ const ThreeJsWave = () => {
       let i = 0, j = 0;
       for (let ix = 0; ix < AMOUNTX; ix++) {
         for (let iy = 0; iy < AMOUNTY; iy++) {
+          const baseX = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
           const waveX = Math.sin((ix + count) * 0.3);
           const waveY = Math.sin((iy + count) * 0.5);
-          positions[i + 1] = (waveX + waveY) * -8; // More depth
-          scales[j] = ((waveX + 1) + (waveY + 1)) * 4; // Bigger bubbles
+          if (enableCursorMovement) {
+           
+            const influence = mouseX * -70;
+            positions[i] = baseX + influence;
+            positions[i + 1] = (waveX + waveY) * -8; // Original y-axis wave
+            scales[j] = ((waveX + 1) + (waveY + 1)) * 4; // Original scale
+          } else {
+            // Original wave animation
+            positions[i] = baseX;
+            positions[i + 1] = (waveX + waveY) * -14;
+            scales[j] = ((waveX + 1) + (waveY + 1)) * 4;
+          }
           i += 3;
           j++;
         }
@@ -116,8 +135,11 @@ const ThreeJsWave = () => {
         container.removeChild(container.firstChild);
       }
       window.removeEventListener('resize', onWindowResize);
+      if (enableCursorMovement) {
+        window.removeEventListener('mousemove', onMouseMove);
+      }
     };
-  }, []);
+  }, [enableCursorMovement]);
 
   return (
     <div

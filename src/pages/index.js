@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Banner from '../components/Banner';
-import SliderComponent from '@/components/SliderComponent';
-import CarSection from '@/components/CarSection';
-import PassengerCar from '@/components/PassengerCar';
-import Blogs from '@/components/Blogs';
-import JoinTeam from '@/components/JoinTeam';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Banner from "../components/Banner";
+import CarCompanyLogoSlider from "@/components/CarCompanyLogoSlider";
+import Blogs from "@/components/Blogs";
+import CarSection from "@/components/CarSection";
+import PassengerCar from "@/components/PassengerCar";
+import JoinTeam from "@/components/JoinTeam";
 
 export default function Home() {
   useEffect(() => {
@@ -16,7 +16,8 @@ export default function Home() {
   return (
     <main className="main-container">
       <Banner />
-      <SliderComponent />
+      <Blogs />
+      <CarCompanyLogoSlider />
       {/* <CarSection />
       <PassengerCar />
       <Blogs />

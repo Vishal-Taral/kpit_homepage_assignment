@@ -1,19 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-   images: {
+  images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.kpit.com'
+        protocol: "https",
+        hostname: "www.kpit.com",
+        port: "",
+        pathname: "/wp-content/**",
       },
     ],
   },
   experimental: {
     turbo: {
-      enabled: false, // ✅ Correct way to disable Turbopack
+      enabled: false,
     },
   },
 };
 
-// export default nextConfig;
+export default nextConfig;

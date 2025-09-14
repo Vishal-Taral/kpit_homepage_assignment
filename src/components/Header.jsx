@@ -8,9 +8,9 @@ import Image from 'next/image';
 const Header = () => {
   return (
     <header className={clsx(styles.main, 'w-full border-b border-black ')}>
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-2">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-3 py-2">
         <div className="text-2xl font-bold tracking-widest text-black"><Image src={'https://www.kpit.com/wp-content/themes/kpit-wp/assets/img/logo.svg'} alt='KPIT logo' width={70} height={20}/></div>
-        <nav className="flex items-center space-x-8 text-sm font-medium text-black">
+        <nav className="flex items-center space-x-8 text-sm font-semibold text-black">
           {['Mobility', 'Expertise', 'Insights', 'Company', 'Careers', 'Investors'].map((item) => (
             <div key={item} className="relative group cursor-pointer">
               <span>{item}</span>

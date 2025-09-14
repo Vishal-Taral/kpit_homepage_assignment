@@ -3,6 +3,8 @@
   margin: 40px auto;
   padding: 0 20px;
 
+  
+
   .slider_card {
     display: flex;
     flex-direction: row;
@@ -16,9 +18,36 @@
     padding: 0.5rem;
     border: 1px solid rgb(186, 179, 179);
 
+    .autocard{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: auto;
+    padding: 0.5rem;
+    border: 1px solid rgb(186, 179, 179);
+  }
+
     &__image {
       position: relative;
       width: 40%;
+      height: auto;
+      min-height: 100%;
+      aspect-ratio: 4 / 3;
+
+      .image_fill {
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+
+    &__full_image {
+      position: relative;
+      width: 100%;
       height: auto;
       min-height: 100%;
       aspect-ratio: 4 / 3;
