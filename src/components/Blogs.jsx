@@ -1,5 +1,5 @@
 import React from "react";
-import SliderComponent from "./SliderComponent";
+import SliderComponent from "../commonComponents/SliderComponent";
 
 const Blogs = () => {
   const dummyData = [

@@ -1,6 +1,7 @@
 import React from "react";
-import ThreeJsWave from "./ThreeJsWave";
+import ThreeJsWave from "../commonComponents/ThreeJsWave";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import Cta from "@/commonComponents/Cta";
 
 const FooterOne = () => {
   return (
@@ -15,12 +16,7 @@ const FooterOne = () => {
         <p className="mt-4 text-gray-400 text-lg">
           Get the important updates from the world of mobility.
         </p>
-        <button className="mt-6 px-6 py-3 bg-[#7e4fff]
-        hover:border-[#7e4fff] text-white font-semibold rounded-full 
-        shadow-lg transition duration-300 flex items-center w-[9rem]"
-        >
-          Subscribe <span className="ml-2"><FaLongArrowAltRight /></span>
-        </button>
+        <Cta ctaName={'Subscribe'}/>
       </div>
       <div className="w-full h-[290px]">
         <ThreeJsWave />

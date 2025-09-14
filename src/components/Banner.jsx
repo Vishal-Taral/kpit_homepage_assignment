@@ -1,5 +1,5 @@
 import React from "react";
-import ThreeJsWave from "./ThreeJsWave";
+import ThreeJsWave from "../commonComponents/ThreeJsWave";
 
 const Banner = () => {
   return (

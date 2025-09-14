@@ -1,5 +1,5 @@
 import React from "react";
-import SliderComponent from "./SliderComponent";
+import SliderComponent from "../commonComponents/SliderComponent";
 
 const CarCompanyLogoSlider = () => {
   const dummyData = [
@@ -58,12 +58,22 @@ const CarCompanyLogoSlider = () => {
     image:
       "https://www.kpit.com/wp-content/themes/kpit-wp/assets/img/partner-11.svg",
   },
+  {
+    id: 12,
+    image:
+      "https://www.kpit.com/wp-content/themes/kpit-wp/assets/img/partner-8.svg",
+  },
+  {
+    id: 13,
+    image:
+      "https://www.kpit.com/wp-content/themes/kpit-wp/assets/img/partner-6.svg",
+  },
 ];
 
   const customSettings = {
     dots: false,
     infinite: true,
-    slidesToShow: 8,
+    slidesToShow: 11,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -81,12 +91,13 @@ const CarCompanyLogoSlider = () => {
   };
   return (
     <div>
+      <h3 className="text-center text-4xl font-semibold font">Trusted by mobility <br /> leaders worldwide</h3>
       <SliderComponent
         data={dummyData}
         settings={customSettings}
         className=""
-        card_height="h-[2rem]"
-        card_width="w-[9rem]"
+        card_height="h-[6rem]"
+        card_width="w-[6rem]"
       />
     </div>
   );
