@@ -5,7 +5,7 @@ import Cta from "@/commonComponents/Cta";
 
 const FooterOne = () => {
   return (
-    <div className="relative w-full bg-[#111111] text-white">
+    <div className="relative w-full bg-[#111111] text-white overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto py-20 px-6 text-center flex flex-col justify-center items-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
           Reimagining <br />
